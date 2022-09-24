@@ -61,14 +61,15 @@ int main(){
     for(i=0;i<num;i++){
         pthread_join(threads[i],NULL);
     }
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
+    //单线程
+    // increase_count_without_lock();
+    // increase_count_without_lock();
+    // increase_count_without_lock();
+    // increase_count_without_lock();
+    // increase_count_without_lock();
+    // increase_count_without_lock();
+    // increase_count_without_lock();
+    // increase_count_without_lock();
     clock_gettime(CLOCK_MONOTONIC,&end);
     t=gettime(&begin,&end);
     pthread_spin_destroy(&spinlock);
