@@ -60,21 +60,16 @@ int main(int argc,char* argv[]){
 
     clock_gettime(CLOCK_MONOTONIC,&begin);
     //多线程创建线程
-    for(i=0;i<num;i++){
-        pthread_create(&threads[i],NULL,run,NULL);
-    }
-    for(i=0;i<num;i++){
-        pthread_join(threads[i],NULL);
-    }
+    // for(i=0;i<num;i++){
+    //     pthread_create(&threads[i],NULL,run,NULL);
+    // }
+    // for(i=0;i<num;i++){
+    //     pthread_join(threads[i],NULL);
+    // }
     //单线程
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
-    // increase_count_without_lock(0);
+    for(int j=0;j<80000000;j++){
+        increase_count_without_lock();
+    }
     clock_gettime(CLOCK_MONOTONIC,&end);
     t=gettime(&begin,&end);
     pthread_spin_destroy(&spinlock);
